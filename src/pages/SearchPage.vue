@@ -23,7 +23,7 @@
         <div
           v-for="player in players"
           :key="player.idPlayer"
-          class="players full-width q-pa-md q-mt-md col-sm-12 col-lg-4"
+          class="players full-width q-pa-md q-mt-md col-sm-12 col-lg-4 col-xl-3 col-md-6"
           rounded
         >
           <q-card class="my-card">
