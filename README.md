@@ -1,6 +1,8 @@
 # Know Your Player (knowyourplayer)
 
-An database of Football (soccer) players
+An database of Sports Athletes
+
+Don't do drugs
 
 ## Install the dependencies
 
