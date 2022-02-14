@@ -1,7 +1,6 @@
 <template>
   <q-page>
-    <!-- #00aa6c -->
-    <q-header class="transparent poppins">
+    <q-header class="dark poppins">
       <q-toolbar>
         <q-toolbar-title>Know your player</q-toolbar-title>
 

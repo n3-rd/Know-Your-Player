@@ -17,6 +17,7 @@
         label="Search Player"
         class="full-width q-mt-md q-pa-md"
         @click="searchPlayer"
+        v-on:keyup.enter="searchPlayer"
       />
 
       <div class="container">
