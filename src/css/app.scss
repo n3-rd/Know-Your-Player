@@ -1,0 +1,26 @@
+// app global css in SCSS form
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+.poppins {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #211f20;
+}
+
+.text-brand {
+  color: #00aa6c !important;
+}
+
+.bg-brand {
+  background: #00aa6c !important;
+}
+
+.transparent {
+  background-color: transparent !important;
+}
