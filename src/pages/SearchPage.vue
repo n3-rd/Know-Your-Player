@@ -29,11 +29,76 @@
             rounded
           >
             <q-card class="my-card">
-              <q-img :src="player.strThumb">
-                <div class="absolute-bottom text-h6 player-name">
-                  {{ player.strPlayer }}
+              <div v-if="player.strCutout">
+                <q-img :src="player.strCutout">
+                  <div class="absolute-bottom text-h6 player-name">
+                    {{ player.strPlayer }}
+                  </div>
+                </q-img>
+              </div>
+
+              <div v-if="!player.strCutout">
+                <q-img :src="player.strThumb">
+                  <div class="absolute-bottom text-h6 player-name">
+                    {{ player.strPlayer }}
+                  </div>
+                </q-img>
+              </div>
+
+              <q-popup-proxy>
+                <div class="full-width">
+                  <q-banner>
+                    <template v-slot:avatar>
+                      <q-card class="my-card">
+                        <q-img :src="player.strThumb">
+                          <div class="absolute-bottom text-h6 player-name">
+                            {{ player.strPlayer }}
+                          </div>
+                        </q-img>
+
+                        <q-card-section class="poppins-medium">
+                          <div class="row">
+                            <div class="col-xs-6">
+                              <b>Sport:</b> {{ player.strSport }} <br />
+                            </div>
+                            <div class="col-xs-6">
+                              <b>Position:</b> {{ player.strPosition }} <br />
+                            </div>
+                            <div class="col-xs-6">
+                              <b>Club:</b> {{ player.strTeam }} <br />
+                            </div>
+                            <div class="col-xs-6">
+                              <b>Born:</b> {{ player.dateBorn }} <br />
+                            </div>
+                            <div class="col-xs-6">
+                              <b>Nationality:</b> {{ player.strNationality }}
+                              <br />
+                            </div>
+                            <div class="col-xs-6">
+                              <b>Gender:</b> {{ player.strGender }} <br />
+                            </div>
+                            <div class="col-xs-6">
+                              <b>Height:</b> {{ player.strHeight }} <br />
+                            </div>
+                          </div>
+
+                          <q-expansion-item
+                            expand-separator
+                            icon="about"
+                            label="about"
+                          >
+                            <q-card>
+                              <q-card-section>
+                                {{ player.strDescriptionEN }}
+                              </q-card-section>
+                            </q-card>
+                          </q-expansion-item>
+                        </q-card-section>
+                      </q-card>
+                    </template>
+                  </q-banner>
                 </div>
-              </q-img>
+              </q-popup-proxy>
 
               <q-card-section class="poppins-medium">
                 Position: {{ player.strPosition }} <br />
@@ -55,6 +120,7 @@ export default {
     return {
       text: "",
       players: [],
+      playerPopup: false,
     };
   },
   methods: {
@@ -72,3 +138,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.my-card {
+  width: 80vw;
+}
+</style>
